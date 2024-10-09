@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Color de fondo inicial */
+        }
+
+        .caja-regalo {
+            font-size: 100px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .caja-regalo:hover {
+            transform: scale(1.1);
+        }
+
+        .sorpresa {
+            text-align: center;
+            display: none;
+        }
+
+        .feliz-cumpleanos {
+            font-size: 48px;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        body.fondo-animado {
+            background: url('https://cochinaditaselhit.com/wp-content/uploads/2015/01/fondo-nuevo4.gif') no-repeat center center fixed;
+            background-size: 95% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja-regalo">
+        🎁
+    </div>
+    <div class="sorpresa" style="display: none;">
+        <h1 class="feliz-cumpleanos">Feliz cumple Valekong 🐒</h1>
+        <div class="globos"></div>
+    </div>
+    <script>
+        // Evento de clic en la caja de regalo
+        document.querySelector('.caja-regalo').addEventListener('click', function() {
+            // Mostrar la sorpresa
+            document.querySelector('.sorpresa').style.display = 'block';
+
+            // Cambiar el fondo del cuerpo a la animación GIF
+            document.body.classList.add('fondo-animado');
+            
+            // Ocultar la caja de regalo
+            this.style.display = 'none'; // La caja desaparece al hacer clic en ella
+        });
+    </script>
+</body>
+</html>
